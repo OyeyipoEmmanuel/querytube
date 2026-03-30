@@ -15,6 +15,7 @@ export function ChatPage(): JSX.Element {
   }, [searchParams]);
 
   const [query, setQuery] = useState<string>(queryFromUrl);
+  const [headerText, setHeaderText] = useState<string>(queryFromUrl)
   const [result, setResult] = useState<VideoSearchResult | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -27,6 +28,9 @@ export function ChatPage(): JSX.Element {
   async function onSearch(nextQuery: string): Promise<void> {
     const trimmed = nextQuery.trim();
     if (trimmed.length === 0) return;
+
+    setHeaderText(trimmed)
+
 
     setLoading(true);
     setError(null);
@@ -42,7 +46,7 @@ export function ChatPage(): JSX.Element {
     } finally {
       setLoading(false);
       setQuery("");
-      setSearchParams({});
+      // setSearchParams({});
     }
   }
 
@@ -57,11 +61,13 @@ export function ChatPage(): JSX.Element {
     [query, loading],
   );
 
-  const queryWordsWithoutLastWord = queryFromUrl
+
+  //Spliting the query to show a different color for the last word
+  const queryWordsWithoutLastWord = headerText
     .split(" ")
     .slice(0, -1)
     .join(" ");
-  const lastWordFromQuery = queryFromUrl.split(" ").pop();
+  const lastWordFromQuery = headerText.split(" ").pop();
 
   return (
     <div className="pageChat">
