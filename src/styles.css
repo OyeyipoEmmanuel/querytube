@@ -102,8 +102,9 @@ input {
 .btn {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.03);
+  font-size: 13px;
   color: var(--text);
-  padding: 10px 14px;
+  padding: 4px 8px;
   border-radius: 12px;
   cursor: pointer;
   transition:
@@ -272,7 +273,7 @@ input {
 }
 
 .pageChat {
-  height: 97vh;
+  height: 98vh;
   display: flex;
   flex-direction: column;
 }
@@ -280,7 +281,7 @@ input {
 .chatBody {
   flex: 1;
   overflow: auto;
-  padding: 24px 0 16px;
+  padding: 30px 0 10px;
 }
 
 .resultsSummary {
@@ -420,7 +421,7 @@ input {
 }
 
 .chatInputBar {
-  padding: 14px 0;
+  padding: 10px 0;
   border-top: 1px solid var(--border);
   background: rgba(11, 13, 18, 0.65);
   backdrop-filter: blur(10px);
@@ -428,7 +429,7 @@ input {
 
 .chatInputRow {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .chatInput {
@@ -438,11 +439,7 @@ input {
   border: 1px solid var(--border);
   background: rgba(12, 15, 22, 0.7);
   color: var(--text);
-}
-
-.chatInput:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
+  outline: none;
 }
 
 .emptyState {

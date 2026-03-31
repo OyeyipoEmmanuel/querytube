@@ -71,7 +71,7 @@ export function ChatPage(): JSX.Element {
 
   return (
     <div className="pageChat">
-      <div className="py-4">
+      <div className="py-4 fixed w-full z-50 bg-[#141313]">
         <div
           className="md:px-8 px-3"
           style={{
