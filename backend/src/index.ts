@@ -23,9 +23,6 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"], // optional, headers your frontend sends
 }));
 
-// Preflight for all routes
-app.options("*", cors());
-
 app.get('/healthz', (_req, res) => {
   res.json({ ok: true });
 });
