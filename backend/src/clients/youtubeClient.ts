@@ -1,4 +1,4 @@
-import { type YouTubeVideo } from '../types';
+import { type YouTubeVideo } from '../types.js';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
