@@ -2,7 +2,7 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import { z } from 'zod';
-import { searchVideos } from './services/videoSearchService';
+import { searchVideos } from './services/videoSearchService.js';
 
 import path from "path";
 import { fileURLToPath } from "url";

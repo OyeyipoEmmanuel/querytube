@@ -1,6 +1,6 @@
-import { refineQueryWithGemini } from '../clients/geminiClient';
-import { searchTopVideosOnYouTube } from '../clients/youtubeClient';
-import { type VideoSearchResult } from '../types';
+import { refineQueryWithGemini } from '../clients/geminiClient.js';
+import { searchTopVideosOnYouTube } from '../clients/youtubeClient.js';
+import { type VideoSearchResult } from '../types.js';
 
 export async function searchVideos(params: { userQuery: string }): Promise<VideoSearchResult> {
   const { userQuery } = params;
