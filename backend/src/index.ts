@@ -13,11 +13,18 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.use(express.json({ limit: '256kb' }));
-app.use(
-  cors({
-    origin: true,
-  }),
-);
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://querytube.devemmanuel.tech"
+  ],
+  methods: ["GET","POST","PUT","DELETE","OPTIONS"], // allow preflight methods
+  allowedHeaders: ["Content-Type", "Authorization"], // optional, headers your frontend sends
+}));
+
+// Preflight for all routes
+app.options("*", cors());
 
 app.get('/healthz', (_req, res) => {
   res.json({ ok: true });
@@ -46,16 +53,15 @@ app.post('/api/video-search', async (req, res) => {
 
 const port = Number(process.env.PORT || 3001);
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Backend listening on http://localhost:${port}`);
+  console.log(`Backend listening on port ${port}`);
 });
 
 // Serve React frontend
-app.use(express.static(path.join(__dirname, "dist")));
+// app.use(express.static(path.join(__dirname, "dist")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "dist", "index.html"));
+// });
 
-app.listen(5000, () => console.log("Server running"));
+// app.listen(5000, () => console.log("Server running"));
 

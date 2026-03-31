@@ -2,6 +2,7 @@ import { type VideoSearchResult } from '../types/video';
 
 export async function searchTopVideos(query: string): Promise<VideoSearchResult> {
   const API_URL = import.meta.env.VITE_API_URL
+  console.log(API_URL)
   const res = await fetch(`${API_URL}/api/video-search`, {
     method: 'POST',
     headers: {
