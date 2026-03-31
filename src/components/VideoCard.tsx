@@ -29,7 +29,7 @@ export function VideoCard({ video }: { video: YouTubeVideo }): JSX.Element {
           
         </div>
 
-        <div className="bg-[#1C1B1B] rounded-lg border-l-[6px] border-[#775853] px-4 py-2 flex flex-col space-y-3 mt-3 md:mt-0">
+        <div className="bg-[#1C1B1B] rounded-lg border-l-[6px] border-[#775853] px-4 py-2 flex flex-col space-y-3 mt-3 md:mt-0 wrap-break-word">
           <h3 className="text-blue-300 font-semibold">Desc:</h3>
           <p className="text-[#EBBBB4] text-sm">{video.snippet}</p>
         </div>
