@@ -167,6 +167,16 @@ export function ChatPage(): JSX.Element {
                 </h1>
               </div>
 
+              <div className="mb-6">
+                <p className="text-[#869AC4] font-extrabold text-sm tracking-wide">
+                  AI Summary
+                </p>
+                <p className="text-white/80 leading-relaxed mt-2 max-w-3xl">
+                  {result.aiSummary?.trim() ||
+                    "I've curated the most impactful visual breakdowns of film noir aesthetics, focusing on low-key lighting, Dutch angles, and the psychological impact of shadows. These results highlight both classic techniques and modern interpretations."}
+                </p>
+              </div>
+
               <div className="grid grid-cols-1 gap-y-6">
                 {result.videos.map((video, idx) => {
                   const updatedVideo = {
