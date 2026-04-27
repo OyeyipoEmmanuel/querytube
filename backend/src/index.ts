@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import './polyfills/fetch.js';
 import cors from 'cors';
 import express from 'express';
 import { z } from 'zod';
